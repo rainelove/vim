@@ -33,7 +33,10 @@ set laststatus=2
 set ruler
 " dislay row number
 set number
-" highlight search result
+" highlight current row and column
+set cursorline
+set cursorcolumn
+"highlight search result
 set hlsearch
 
 " disable wrap
@@ -52,3 +55,21 @@ filetype indent on
 set expandtab
 " setup tab spaces when edit
 set tabstop=4
+" setup tab spaces when format
+set shiftwidth=4
+" let vim treat a continous spaces as a tab
+set softtabstop=4
+
+" let indent_guides enable on vim startup
+let g:indent_guides_enable_on_vim_startup=1
+" display indent visualize from second level
+let g:indent_guides_start_level=2
+" color block width
+let g:indent_guides_guide_size=1
+" hotkey i turn on/off indent visualization
+:nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+
+" switch between *.cpp and *h
+nmap <Leader>ch :A<CR>
+" display *.cpp or *.h in subwindow
+nmap <Leader>sch :AS<CR>
